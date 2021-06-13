@@ -101,7 +101,7 @@ class Customer extends Component {
                                     </div>
                                 </form>
                                 {this.state.detailExists === false && 
-                                <div className="col-12 font-color mt-4">{this.state.detailMessage}</div>}
+                                <div className="col-12 font-color-cust mt-4">{this.state.detailMessage}</div>}
                                 {/* {this.state.detailExists === true && 
                                 <div className="col-12 text-danger">User Not Found. Try to login with different credentials.</div>} */}
                                 {this.state.detailExists === true && 
