@@ -1,0 +1,73 @@
+.cutomer-card{
+    /* padding: 10%; */
+    padding-top: 5%;
+    padding-bottom: 5%;
+    /* padding-left: 10%; */
+    /* padding-right: 10%;  */
+    /* background-image: url("../../assets/images/login_factory.jpg"); */
+    background-size: 100%;
+    
+  background-repeat: no-repeat;
+    height: max-content;
+    /* position: fixed; */
+    /* overflow: auto; */
+    
+    /* width: 90%; */
+}
+.search{
+    color: whitesmoke;
+}
+
+.customer-card >div> .card-full{
+    /* background-color: transparent; */
+    /* opacity: 0.8; */
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    background-color: #121212;
+    -webkit-box-shadow: -1px 1px 1px 1px rgba(154, 144, 144, 0.1);
+-moz-box-shadow: -1px 1px 5px 9px rgba(154, 144, 144, 0.1);
+box-shadow: -1px 1px 5px 9px rgba(154, 144, 144, 0.1);
+}
+
+.btn-primary{
+    /* align-items: center;
+    justify-content: center;
+    display: flex; */
+    /* position: absolute;
+  top: 50%;
+  left: 35%; */
+}
+
+.font-color{
+    color: antiquewhite;
+}
+
+.card-title{
+    font-family: 'Merriweather', serif;
+    font-weight: 500;
+}
+ h4{
+    /* font-style: italic; */
+    /* font-weight: 700; */
+    color: whitesmoke;
+    
+    padding-bottom: 10%;
+ }
+
+.opaque{
+     /* opacity: 0.6; */
+     background-color: #121212;
+     /* display: block; */
+     /* background-color: rgba(255, 255, 255, 0.9); */
+     /* color: white; */
+ }
+ .whitehead{
+     color: whitesmoke
+ }
+
+ label{
+    font-family: 'Merriweather', serif;
+    font-size: 15px;
+    /* color: white;
+    opacity: 1!important; */
+    
+ }
