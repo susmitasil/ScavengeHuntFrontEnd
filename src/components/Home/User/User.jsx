@@ -48,9 +48,8 @@ class User extends Component {
                         <div className="card card-full">
                             <div className="card-body col-12">
                                 <h5 className="card-title text-center p-4 m-3 branch text-capitalize">Welcome {this.state.username}!</h5>
-                                {this.state.details.length>0 && 
+                                {this.state.details.length>0 &&  
                                 <div className="row mx-5">
-                                    {/* hi */}
                                     <div className="col-6 font-color">
                                         <div className="col-12"> Institute : {this.state.details[0].institute}</div>
                                         <div className="col-12"> Branch Incharge : {this.state.details[0].branch_incharge}</div>
