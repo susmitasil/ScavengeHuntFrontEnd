@@ -1,62 +1,81 @@
 import React, { Component } from 'react';
 import  { Redirect, withRouter  } from 'react-router-dom'
-// import './Login.css'
+import './User.css'
 import axios from 'axios'
 
 class User extends Component {
     constructor(props){
         super(props)
         this.state = {
-            formValue : {username : '', password : ''},
-            formErrorMessage : {username : '', password : ''},
-            formOptionValid : {username : false, password : false},
-            formValid : false,
             username : sessionStorage.getItem('user'),
-            role : sessionStorage.getItem('role')
+            role : sessionStorage.getItem('role'),
+            details : []
+
         }
     }
     
 
     componentDidMount(){
+        this.getDetails()
         console.log(this.state.role)
     }
 
-    handleSubmit = (e) =>{
-        console.log(this.props.history)
-        e.preventDefault()
-        if(this.state.formValue.username === 'Admin' && this.state.formValue.password === '12345'){
-            this.props.history.push('/home');
+    getDetails = () =>{
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
         }
-        else{
-            this.props.history.push('/');
-        }
-    }
-
-    handleChange = (e)=>{
-        let formValueObj = this.state.formValue
-        let formOptionValidObj = this.state.formOptionValid
-        switch(e.target.id){
-            case 'username':
-                formValueObj.username = e.target.value
-                formOptionValidObj.username = true
-                this.setState({formValue : formValueObj})
-                this.setState({formOptionValid : formOptionValidObj})
-                break;
-            case 'password':
-                formValueObj.password = e.target.value
-                formOptionValidObj.password = true
-                this.setState({formValue : formValueObj})
-                this.setState({formOptionValid : formOptionValidObj})
-                break;
-        }
-        if(this.state.formOptionValid.username === true && this.state.formOptionValid.password === true){
-            this.setState({formValid : !this.state.formValid})
-        }
+        console.log(this.state)
+        axios.post('http://localhost:4000/getDetailsUser', this.state, config)
+        .then(res => {
+            console.log(res.data.data)
+            this.setState({details: res.data.data})
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
   render() {
     return (
         <React.Fragment>
-            hi User
+            {/* hi Admin */}
+
+            {/* {JSON.stringify(this.state.details)} */}
+            <div className="row user-card ">
+                    <div className="col-md-1"></div>
+                    <div className="col-10">
+                        <div className="card card-full">
+                            <div className="card-body col-12">
+                                <h5 className="card-title text-center p-4 m-3 branch text-capitalize">Welcome {this.state.username}!</h5>
+                                {this.state.details.length>0 && 
+                                <div className="row mx-5">
+                                    {/* hi */}
+                                    <div className="col-6 font-color">
+                                        <div className="col-12"> Institute : {this.state.details[0].institute}</div>
+                                        <div className="col-12"> Branch Incharge : {this.state.details[0].branch_incharge}</div>
+                                        <div className="col-12"> City : {this.state.details[0].city}</div>
+                                        
+                                    </div>
+                                    <div className="col-6 font-color">
+                                        <div className="col-12"> Branch Name : {this.state.details[0].branch_name}</div>
+                                        <div className="col-12"> Contact : {this.state.details[0].contact.join(", ")  }</div>
+                                        <div className="col-12"> Address : {this.state.details[0].address}</div>
+                                        
+                                    </div>
+                                    <div className="col-12 font-color"> Pin : {this.state.details[0].pin_covered.join(", ")}</div>
+                                </div>
+                                }
+                                
+                                {/* {this.state.userExists === false && <div className="col-12 text-danger">User Not Found. Try to login with different credentials.</div>} */}
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className="col-md-1"></div>
+                </div>
+
+
         </React.Fragment>
     //   <div> textInComponent </div>
     );

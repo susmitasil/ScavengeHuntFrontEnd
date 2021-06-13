@@ -23,13 +23,6 @@ function App() {
         <Route exact path="/home">
           <Home />
         </Route>
-        {/* <Route exact path="/objects"> */}
-          {/* <LightStack data={data} /> */}
-          {/* <InfoCard data={data} label="Info" /> */}
-        {/* </Route> */}
-        {/* <Route exact path="/factory_details/:id"  component={FactoryDetails}> */}
-          {/* <FactoryDetails /> */}
-        {/* </Route> */}
 
       </Switch>
       </div>
