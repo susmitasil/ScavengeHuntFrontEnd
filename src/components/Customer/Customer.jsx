@@ -40,12 +40,6 @@ class Customer extends Component {
             .catch(err => {
                 console.log(err)
             })
-        // if (this.state.formValue.phone === 'Admin' && this.state.formValue.pin === '12345') {
-        //     this.props.history.push('/home');
-        // }
-        // else {
-        //     this.props.history.push('/');
-        // }
     }
 
     handleChange = (e) => {
@@ -76,12 +70,12 @@ class Customer extends Component {
         return (
             <React.Fragment>
                 <div className="row customer-card mt-4">
-                    <div className="col-md-1"></div>
-                    <div className="col col-md-10">
+                    <div className="col-md-1 col-sm-0"></div>
+                    <div className="p-0  col-md-10 col-sm-12 ">
                         <div className="card card-full">
                             <div className="card-body">
                                 <h5 className="card-tile text-center search mb-3">Enter Details to Search</h5>
-                                <form onSubmit={this.handleSubmit} className="row">
+                                <form onSubmit={this.handleSubmit} className="row p-4">
                                     <div className="form-group text-left col-4">
                                         <label htmlFor="phone" className="font-weight-bold font-color" style={{ textAlign: 'left' }}>Phone
                                             <input type="text" name="phone" id="phone" className="form-control col-12 opaque mt-1" placeholder="e.g., 981234XXXX" aria-describedby="phoneHelp" onChange={this.handleChange} />
@@ -148,7 +142,7 @@ class Customer extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-1"></div>
+                <div className="col-md-1 col-sm-0"></div>
 
             </React.Fragment>
             //   <div> textInComponent </div>

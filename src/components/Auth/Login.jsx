@@ -37,12 +37,6 @@ class Login extends Component {
             .catch(err => {
                 console.log(err)
             })
-        // if (this.state.formValue.username === 'Admin' && this.state.formValue.password === '12345') {
-        //     this.props.history.push('/home');
-        // }
-        // else {
-        //     this.props.history.push('/');
-        // }
     }
 
     handleChange = (e) => {
@@ -72,9 +66,9 @@ class Login extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="row login-card">
-                    <div className="col-md-4"></div>
-                    <div className="col col-md-4">
+                <div className="login-card row">
+                    <div className="col-md-4 col-sm-0 p-0 m-0"></div>
+                    <div className="col-md-4 col-sm-10 p-0">
                         <div className="card card-full">
                             <div className="card-body">
                                 <h4 className="card-tile text-center">Scavengers....<br /> Are you ready to <br />Hunt!!!!</h4>
@@ -91,10 +85,10 @@ class Login extends Component {
                                         </label>
                                         {/* <small id="passwordHelp" className="text-muted">Password : 12345</small> */}
                                     </div>
-                                    <div className="form-group center row m-4">
-                                        <div className="col-md-4" > </div>
-                                        <button type="submit" className="btn btn-block btn-primary col-md-4" disabled={!this.state.formValid}>Login </button>
-                                        <div className="col-md-4"> </div>
+                                    <div className="form-group center row my-4">
+                                        <div className="col-md-4 col-sm-0" > </div>
+                                        <button type="submit" className="btn btn-block btn-primary col-md-4 col-sm-12" disabled={!this.state.formValid}>Login </button>
+                                        <div className="col-md-4 col-sm-0"> </div>
                                     </div>
                                 </form>
                                 {this.state.userExists === false && <div className="col-12 text-danger">User Not Found. Try to login with different credentials.</div>}
@@ -105,7 +99,7 @@ class Login extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-4"></div>
+                <div className="col-md-4 col-sm-0 p-0"></div>
 
             </React.Fragment>
             //   <div> textInComponent </div>
